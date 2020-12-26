@@ -17,12 +17,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests()
+        http.authorizeRequests()
+                // 放通h2-console的登录页面
+                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/greet").hasRole("ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .defaultSuccessUrl("/welcome");
+                .anyRequest().authenticated();
+
+        http.formLogin().defaultSuccessUrl("/welcome");
+
+        // 放通h2-console登录后的页面
+        // https://stackoverflow.com/questions/43794721/spring-boot-h2-console-throws-403-with-spring-security-1-5-2
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 }

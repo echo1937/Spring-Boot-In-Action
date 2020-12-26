@@ -28,11 +28,9 @@ public class MemberConfiguration {
                     Arrays.asList(
                             new Member("monika", passwordEncoder.encode("123456"), "Monika", role_user_admin, null),
                             new Member("jack", passwordEncoder.encode("123456"), "Jack", role_user, null),
-                            new Member("peter", "123456", "Peter", role_user, null)
-                    )
+                            new Member("peter", passwordEncoder.encode("123456"), "Peter", role_user, null))
             );
-            System.out.println("测试");
-            System.out.println("ApplicationRunner with args:" + Arrays.toString(args.getSourceArgs()));
+            System.out.println("H2数据库初始化完毕");
         };
     }
 }

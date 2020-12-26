@@ -15,12 +15,9 @@ import java.util.Optional;
 public class MemberController {
     final MemberRepository memberRepository;
 
-    @GetMapping("/greet")
+    @GetMapping({"/greet", "welcome"})
     public ResponseEntity<Member> greet(HttpServletRequest request) {
-
         Optional<Member> byUsername = memberRepository.findByUsername(request.getUserPrincipal().getName());
-
         return ResponseEntity.of(byUsername);
-
     }
 }

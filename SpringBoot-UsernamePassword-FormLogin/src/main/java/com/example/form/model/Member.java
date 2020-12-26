@@ -21,7 +21,7 @@ public class Member {
 
     String name;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     Set<String> authorities = new HashSet<>();
 
     @Id
