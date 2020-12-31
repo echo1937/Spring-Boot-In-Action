@@ -13,6 +13,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login.html").permitAll()
                 .anyRequest().authenticated();
 
-        http.oauth2Login().loginPage("/login.html").defaultSuccessUrl("/success.html");
+        http.oauth2Login().loginPage("/login.html").defaultSuccessUrl("/success.html", true);
     }
 }
