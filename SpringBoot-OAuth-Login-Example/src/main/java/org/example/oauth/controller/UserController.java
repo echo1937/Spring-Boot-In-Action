@@ -11,7 +11,7 @@ import java.security.Principal;
 public class UserController {
 
     @GetMapping("/user")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Principal> user(Principal principal) {
         return ResponseEntity.ok(principal);
     }
