@@ -1,18 +1,72 @@
 package com.example.form.config;
 
+import com.example.form.model.Member;
+import com.example.form.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+import java.util.*;
+import java.util.stream.Collectors;
 
+@Slf4j
+@Configuration
+@RequiredArgsConstructor
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    final MemberRepository memberRepository;
+    final Logger logger = LoggerFactory.getLogger(SecurityConfiguration.class);
+
+    // 实现PasswordEncoder
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    // 实现UserDetailsService
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return username -> {
+            Optional<Member> byUsername = memberRepository.findByUsername(username);
+
+            if (byUsername.isEmpty()) {
+                throw new UsernameNotFoundException(username + " was not found");
+            }
+
+            Member member = byUsername.get();
+            List<SimpleGrantedAuthority> collect = member.getAuthorities().stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+            return User.withUsername(member.getUsername())
+                    .password(member.getPassword())
+                    .authorities(collect)
+                    .build();
+        };
+    }
+
+    // 初始化H2数据库
+    @Bean
+    ApplicationRunner applicationRunner() {
+        return args -> {
+            Set<String> role_user = new HashSet<>(Collections.singletonList("ROLE_USER"));
+            Set<String> role_user_admin = new HashSet<>(Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+            memberRepository.saveAll(
+                    Arrays.asList(
+                            new Member("monika", passwordEncoder().encode("123456"), "Monika", role_user_admin, null),
+                            new Member("jack", passwordEncoder().encode("123456"), "Jack", role_user, null),
+                            new Member("peter", passwordEncoder().encode("123456"), "Peter", role_user, null))
+            );
+            logger.info("H2数据库初始化完毕");
+        };
     }
 
     @Override
