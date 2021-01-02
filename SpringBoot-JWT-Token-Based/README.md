@@ -27,3 +27,22 @@
    * 使用http.addFilterBefore()注册Filter(UsernamePasswordAuthenticationFilter.class之前)
    * 使用http.sessionManagement().sessionCreationPolicy()关闭session, 改为无状态的JWT
    * http.exceptionHandling()注册我们的Bean, 控制AuthenticationException和AccessDeniedException捕获后的处理逻辑
+## 测试方法
+* 权限
+  * monika：ROLE_USER、ROLE_ADMIN
+  * jack and peter：ROLE_USER
+* 登录
+```
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "monika",
+  "password": "123456"
+}
+```
+* 鉴权访问
+```
+GET http://localhost:8080/greet
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb25pa2EiLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4sUk9MRV9VU0VSIiwiZXhwIjoxNjA5NTYxMzcxfQ.euPxshcgO7sQAv1je2AdkNYJgFX7JVv196rx2tohUgq4m56doOG1EpmNWfpnx5MS4pgQF5HV0Li3-ZHwHePf1g
+```

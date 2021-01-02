@@ -59,12 +59,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return args -> {
             Set<String> role_user = new HashSet<>(Collections.singletonList("ROLE_USER"));
             Set<String> role_user_admin = new HashSet<>(Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-            memberRepository.saveAll(
-                    Arrays.asList(
-                            new Member("monika", passwordEncoder().encode("123456"), "Monika", role_user_admin, null),
-                            new Member("jack", passwordEncoder().encode("123456"), "Jack", role_user, null),
-                            new Member("peter", passwordEncoder().encode("123456"), "Peter", role_user, null))
-            );
+            List<Member> members = Arrays.asList(
+                    new Member("monika", passwordEncoder().encode("123456"), "Monika", role_user_admin, null),
+                    new Member("jack", passwordEncoder().encode("123456"), "Jack", role_user, null),
+                    new Member("peter", passwordEncoder().encode("123456"), "Peter", role_user, null));
+            memberRepository.saveAll(members);
             logger.info("H2数据库初始化完毕");
         };
     }
