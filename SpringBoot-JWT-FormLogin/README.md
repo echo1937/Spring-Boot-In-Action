@@ -21,4 +21,19 @@
 * 其他细节
   * JwtAccessDeniedHandler用于AccessDeniedException异常的处理
   * JwtAuthenticationEntryPoint用于AuthenticationException异常的处理
-  
+## 测试方法：
+* 权限
+  * monika：ROLE_USER、ROLE_ADMIN
+  * jack and peter：ROLE_USER
+* 登录
+```
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=jack&password=123456
+```
+* 鉴权访问
+```
+GET http://localhost:8080/greet
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb25pa2EiLCJhdXRob3JpdGllcyI6IlJPTEVfQURNSU4sUk9MRV9VU0VSIiwiZXhwIjoxNjA5NTc3Njc1fQ.Ct2961oQUgN2h-3Lt0BOMr9E-a8KxOb1ggVKmRn-FE0sIi0hSg3johDzJxrp3tf7zESvQwEIy8-igb-JZkbsIA
+```
