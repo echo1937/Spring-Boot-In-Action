@@ -1,5 +1,7 @@
 # SpringBoot UsernamePassword FormLogin
 
+## 引用
+- https://waynestalk.com/spring-security-form-login-jpa-springdoc-explained/
 ## 场景
 - H2数据库
 - Spring Data JPA

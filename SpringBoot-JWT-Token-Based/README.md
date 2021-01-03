@@ -1,5 +1,7 @@
 # SpringBoot JWT Token Based 
 
+## 应用
+- https://waynestalk.com/spring-security-jwt-jpa-springdoc-explained/
 ## 场景
 - H2数据库
 - Spring Data JPA
