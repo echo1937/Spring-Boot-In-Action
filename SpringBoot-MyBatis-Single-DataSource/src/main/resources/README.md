@@ -23,19 +23,26 @@
     * 示例：UserController
 ## 细节
 * dao层
-   * 一般采用"接口+注解"或者"接口+xml"的方式
-      * "接口+注解": 可以实现去XML化，Java Text Blocks普及后会有更大发挥空间
-      * "接口+xml": 打包后, 接口文件和xml必需在同一个位置下  
-   * @Mapper用在接口类上，在编译之后会生成相应的接口实现类
-   * @MapperScan扫描指定包下所有的接口类，所有接口在编译之后都会生成相应的实现类，可以添加在SpringBootApplication启动类上
-   * [@Repository和@Mapper注解的区别](https://juejin.cn/post/6844903958985736205)
+    * 一般采用"接口+注解"或者"接口+xml"的方式
+        * "接口+注解": 可以实现去XML化，Java Text Blocks普及后会有更大发挥空间
+        * "接口+xml": 打包后, 接口文件和xml必需在同一个位置下
+    * @Mapper用在接口类上，在编译之后会生成相应的接口实现类
+    * @MapperScan扫描指定包下所有的接口类，所有接口在编译之后都会生成相应的实现类，可以添加在SpringBootApplication启动类上
+    * [@Repository和@Mapper注解的区别](https://juejin.cn/post/6844903958985736205)
 * service层
-   * 现在一般不会拆分Service和ServiceImpl
+    * 现在一般不会拆分Service和ServiceImpl
 * 完整的MyBatis设置
-   * application.yaml
-      * 配置数据源
-      * 配置下划线转驼峰("接口+注解"时需要)
-   * SpringBootApplication启动类
-      * 配置@MapperScan, 扫描接口类
-   * 文件
-      * entity + mapper + service
+    * application.yaml
+        * 配置数据源
+        * 配置下划线转驼峰("接口+注解"时需要)
+    * SpringBootApplication启动类
+        * 配置@MapperScan, 扫描接口类
+    * 文件
+        * entity + mapper + service
+
+## 扩展阅读
+
+* [mybatis-spring-boot-autoconfigure](https://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
+* [Quick Start](https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start)
+* [Spring Boot(六)：如何优雅的使用 Mybatis](https://www.cnblogs.com/ityouknow/p/6037431.html)
+* [Google: mybatis-spring-boot-starter](https://www.google.com/search?q=mybatis-spring-boot-starter&oq=mybatis-spring-boot-starter)
