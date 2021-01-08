@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: pc
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: redhat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    second-druid:
+      url: jdbc:mysql://localhost:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: redhat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 命名文档块1
+---
+spring:
+  profiles: pc
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.231:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    second-druid:
+      url: jdbc:mysql://192.168.1.231:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
