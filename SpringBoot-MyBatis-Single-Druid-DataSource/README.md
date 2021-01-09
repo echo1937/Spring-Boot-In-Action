@@ -1,4 +1,4 @@
-# SpringBoot MyBatis Single DataSource
+# SpringBoot MyBatis Single Druid DataSource
 
 ## 场景
 - MySQL数据库
