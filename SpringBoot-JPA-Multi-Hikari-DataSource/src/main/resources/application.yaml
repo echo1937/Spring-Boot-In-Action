@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    hikari:
+      jdbcUrl: jdbc:mysql://localhost:3306/one?useSSL=false
+      username: root
+      password: redhat
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    second-hikari:
+      jdbcUrl: jdbc:mysql://localhost:3306/two?useSSL=false
+      username: root
+      password: redhat
+      driver-class-name: com.mysql.cj.jdbc.Driver
