@@ -42,6 +42,7 @@
 
 ## 扩展阅读
 
+* [mybatis-spring](https://mybatis.org/spring/index.html)
 * [mybatis-spring-boot-autoconfigure](https://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
 * [Quick Start](https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start)
 * [Spring Boot(六)：如何优雅的使用 Mybatis](https://www.cnblogs.com/ityouknow/p/6037431.html)

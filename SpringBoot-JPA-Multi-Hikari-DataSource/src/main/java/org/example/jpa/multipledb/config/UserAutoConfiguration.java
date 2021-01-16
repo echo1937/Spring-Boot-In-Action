@@ -35,7 +35,7 @@ public class UserAutoConfiguration {
     public LocalContainerEntityManagerFactoryBean userEntityManager(EntityManagerFactoryBuilder builder) {
         final HashMap<String, String> properties = new HashMap<>();
         properties.put("hibernate.hbm2ddl.auto", "update");
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL55Dialect");
 
         return builder.dataSource(userDataSource())
                 .properties(properties)
