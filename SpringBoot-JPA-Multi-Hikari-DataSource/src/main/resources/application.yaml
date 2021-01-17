@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: home
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
   datasource:
     hikari:
       jdbcUrl: jdbc:mysql://localhost:3306/one?useSSL=false
@@ -12,11 +17,6 @@ spring:
       username: root
       password: redhat
       driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
 
 
 ---

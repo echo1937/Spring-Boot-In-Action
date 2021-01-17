@@ -6,9 +6,9 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 @Entity
 @Table
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Possession {
