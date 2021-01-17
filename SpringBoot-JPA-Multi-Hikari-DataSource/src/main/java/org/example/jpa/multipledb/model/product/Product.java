@@ -1,9 +1,6 @@
 package org.example.jpa.multipledb.model.product;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,8 +8,9 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
+@Builder
 @Entity
-@Table(schema = "products")
+@Table
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {

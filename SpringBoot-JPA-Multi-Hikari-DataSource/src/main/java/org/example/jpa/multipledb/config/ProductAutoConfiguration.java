@@ -31,7 +31,7 @@ public class ProductAutoConfiguration {
     @Bean
     public LocalContainerEntityManagerFactoryBean productEntityManager(EntityManagerFactoryBuilder builder) {
         final HashMap<String, String> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "update");
+        properties.put("hibernate.hbm2ddl.auto", "create");
         properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL55Dialect");
 
         return builder.dataSource(productDataSource())

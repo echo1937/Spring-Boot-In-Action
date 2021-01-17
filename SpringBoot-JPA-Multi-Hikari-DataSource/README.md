@@ -11,6 +11,10 @@
 
 ## 细节
 
+- [Difference between junit-vintage-engine and junit-jupiter-engine?](https://stackoverflow.com/questions/59193282/difference-between-junit-vintage-engine-and-junit-jupiter-engine)
+- [JUnit tests always rollback the transactions](https://stackoverflow.com/a/27296926/2411714)
+- [How to set hibernate.format_sql in spring-boot?](https://stackoverflow.com/a/42457442/2411714)
+
 ## 扩展阅读
 
 * [https://github.com/Java-Techie-jt/spring-boot-multiple-datasource](https://github.com/Java-Techie-jt/spring-boot-multiple-datasource)

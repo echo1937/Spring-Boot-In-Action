@@ -1,21 +1,21 @@
 package org.example.jpa.multipledb.model.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Getter
 @Setter
+@Builder
 @Entity
-@Table(name = "users")
+@Table
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
+    @OneToMany
+    List<Possession> possessionList;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -24,9 +24,6 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
     private Integer status;
-
-    @OneToMany
-    List<Possession> possessionList;
 
     @Override
     public String toString() {

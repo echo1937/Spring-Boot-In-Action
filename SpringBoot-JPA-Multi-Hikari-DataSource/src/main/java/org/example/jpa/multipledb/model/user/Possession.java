@@ -18,6 +18,11 @@ public class Possession {
     private long id;
     private String name;
 
+    public Possession(final String name) {
+        super();
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Possession [id=" + id + ", name=" + name + "]";
