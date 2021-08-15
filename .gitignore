@@ -28,3 +28,7 @@ hs_err_pid*
 /SpringBoot-OAuth-Login-Example/src/main/resources/application.properties
 /SpringBoot-OAuth-Rest-JWT/src/main/resources/static/login.html
 /SpringBoot-OAuth-Rest-JWT/src/main/resources/application.properties
+
+**/mvnw
+**/mvnw.cmd
+**/.mvn
