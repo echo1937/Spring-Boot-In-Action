@@ -12,7 +12,7 @@
 1. mapper层
     * 别名：dao层
     * 用途：对数据库进行数据持久化操作，它的方法语句是直接针对数据库操作的，主要实现一些增删改查操作，在MyBatis中方法主要与与xxx.xml内相互一一映射。
-    * 示例：userMapper
+    * 示例：UserMapper
 1. service层
     * 别名：无
     * 用途：给controller层的类提供接口进行调用。一般就是自己写的方法封装起来，就是声明一下，具体实现在serviceImpl中。
@@ -39,6 +39,13 @@
         * 配置@MapperScan, 扫描接口类
     * 文件
         * entity + mapper + service
+
+## 更新
+* 版本（2020-12-30）
+  * 升级到JDK 17
+  * 升级到springboot 2.5.8
+  * druid-spring-boot-starter升级到1.2.8（IDEA提示推荐）
+  * mybatis-spring-boot-starter升级到2.2.0（IDEA提示推荐, 兼容springboot 2.5+）
 
 ## 扩展阅读
 

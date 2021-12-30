@@ -7,17 +7,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.7.RELEASE</version>
+        <version>2.5.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>org.example</groupId>
     <artifactId>singledruid</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>SpringBoot-MyBatis-Single-DataSource</description>
+    <description>SpringBoot-MyBatis-Single-Druid-DataSource</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -28,7 +28,8 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.4</version>
+            <!-- 2.1.x适配springboot 2.1~2.4；2.2.x适配springboot 2.5+ -->
+            <version>2.2.0</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -54,7 +55,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.22</version>
+            <version>1.2.8</version>
         </dependency>
     </dependencies>
     <build>

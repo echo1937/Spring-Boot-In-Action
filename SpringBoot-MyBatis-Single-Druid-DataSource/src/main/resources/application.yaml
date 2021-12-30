@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: pc
+    active: default
   datasource:
     initialization-mode: always
     druid:
