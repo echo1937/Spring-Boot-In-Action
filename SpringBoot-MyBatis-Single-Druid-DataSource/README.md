@@ -39,6 +39,8 @@
         * 配置@MapperScan, 扫描接口类
     * 文件
         * entity + mapper + service
+* xml文件的定位
+  * xml文件和mapper文件如果不在同一路径下，需要使用[mybatis.mapper-locations配置xml文件路径](https://blog.csdn.net/zxl646801924/article/details/88669809)
 
 ## 更新
 * 版本（2020-12-30）
