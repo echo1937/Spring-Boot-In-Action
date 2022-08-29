@@ -341,6 +341,7 @@ JUnit 还提供了读取外部 CSV 格式文件数据的方式作为数据源的
 - https://junit.org/junit5/docs/current/user-guide/#overview-getting-started-junit-artifacts
 
 - https://www.baeldung.com/junit-5
+- https://www.baeldung.com/parameterized-tests-junit-5
 
 - https://zhuanlan.zhihu.com/p/43902194
 - https://dev.to/stealthmusic/why-you-should-start-using-junit-5-5gk2
