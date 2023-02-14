@@ -14,7 +14,10 @@
    - 启用@EnableAsync, 额外提到了annotation, mode, proxyTargetClass, order等选项
    - XML配置
 3. @Async注解
-   - 限制: 所在类是public的, 不可以自调用(主要是和类的Proxy有关)
+   - 限制: 
+     - @Async方法所在类必须是public的, 不可以自调用(主要是和类的Proxy有关)
+     - @Async方法所在类必须是Spring容器管理的bean对象
+     - [什么情况会使@Async失效](https://www.cnblogs.com/tsangyi/p/13303018.html)
    - 方法的返回类型可以是void, 也可以是Future泛型, 或者AsyncResult泛型来返回结果
 4. Executor
    - 可以定义一个方法级的Executor, 以@Async("threadPoolTaskExecutor")的方式指定该方法的Executor
