@@ -4,6 +4,8 @@
 ### 来源
 
 * [How To Do @Async in Spring](https://www.baeldung.com/spring-async)
+* [JUnit5 @RunWith](https://www.baeldung.com/junit-5-runwith)
+* [整合JUnit5时出现空指针异常](https://blog.csdn.net/weixin_45088605/article/details/124470799)
 
 ### 内容详解
 

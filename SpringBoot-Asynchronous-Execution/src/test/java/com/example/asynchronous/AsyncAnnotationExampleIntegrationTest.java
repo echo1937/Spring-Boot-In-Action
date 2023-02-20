@@ -3,17 +3,17 @@ package com.example.asynchronous;
 
 import com.example.asynchronous.config.SpringAsyncConfig;
 import com.example.asynchronous.service.AsyncComponent;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringAsyncConfig.class}, loader = AnnotationConfigContextLoader.class)
 public class AsyncAnnotationExampleIntegrationTest {
 
