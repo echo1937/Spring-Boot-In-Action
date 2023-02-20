@@ -4,7 +4,7 @@
 
 ### 资料来源
 - [Spring Events](https://www.baeldung.com/spring-events)
-  - By default Spring events are synchronous), the doStuffAndPublishAnEvent() method blocks until all listeners finish processing the event.
+  - By default Spring events are synchronous, the doStuffAndPublishAnEvent() method blocks until all listeners finish processing the event.
   - There's an alternative way of publishing events. If we return a non-null value from a method annotated with @EventListener as the result, Spring Framework will send that result as a new event for us. Moreover, we can publish multiple new events by returning them in a collection as the result of event processing.
 - [聊透Spring事件机制](https://juejin.cn/post/7140849555607650335)
   - 可以通过@Autowired和ApplicationEventPublisherAware获取publisher(ApplicationEventPublisher)
