@@ -9,11 +9,11 @@ import java.util.concurrent.Future;
 
 @Slf4j
 @Service
-public class AsyncService {
+public class AsyncComponent {
 
     private static final String Thread_Pool_Task_Executor = "threadPoolTaskExecutor";
 
-    @Async(Thread_Pool_Task_Executor)
+    @Async
     public void asyncMethodWithVoidReturnType() {
         log.info("Execute method asynchronously. " + Thread.currentThread().getName());
     }
@@ -29,5 +29,15 @@ public class AsyncService {
         }
 
         return null;
+    }
+
+    @Async(Thread_Pool_Task_Executor)
+    public void asyncMethodWithConfiguredExecutor() {
+        log.info("Execute method asynchronously with configured executor " + Thread.currentThread().getName());
+    }
+
+    @Async
+    public void asyncMethodWithExceptions() throws Exception {
+        throw new Exception("Throw message from asynchronous method. ");
     }
 }

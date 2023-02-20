@@ -22,11 +22,14 @@
 4. Executor
    - 可以定义一个方法级的Executor, 以@Async("threadPoolTaskExecutor")的方式指定该方法的Executor
    - 可以定义一个APP级别的Executor, 该Executor是全局默认的Executor()
-   - 同时定义两个Executor时, 可以把@EnableAsync移动到启动类上面(两边都标注也是可以的)
+   - 同时定义两个Executor时, 可以参考SpringAsyncConfig的写法
    - APP级别的Executor在定义时, 需要显式调用initialize后返回, 否则会报错
 5. 异常处理
    - 在发生异常时, Future泛型作为返回值的方法可以通过Future.get()获取异常内容, 
    - void方法就需要实现AsyncConfigurer接口的getAsyncUncaughtExceptionHandler方法来处理此类异常
+6. 测试相关
+   - 由于JUnit4并没有完整启动SpringBoot, 所以需要@ComponentScan("com.example.asynchronous.service")来扫描bean，否则AsyncAnnotationExampleIntegrationTest无法找到bean
+   - 通过XML进行异步配置不是重点, 过一眼就好
 
 ### Reference Documentation
 For further reference, please consider the following sections:
