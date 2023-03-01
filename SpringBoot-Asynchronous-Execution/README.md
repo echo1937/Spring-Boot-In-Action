@@ -4,6 +4,18 @@
 ### 来源
 
 * [How To Do @Async in Spring](https://www.baeldung.com/spring-async)
+* [Spring线程池ThreadPoolTaskExecutor用法](https://juejin.cn/post/7033369137543905311)
+* [我会手动创建线程，为什么让我使用线程池？](https://www.cnblogs.com/FraserYu/p/12749603.html)
+* [说一下线程池里面的几把锁](https://zhuanlan.zhihu.com/p/432425262)
+  * GitHub不错，任务调度流程图很形象
+
+### 源码分析
+
+* [Java线程池ThreadPoolExecutor原理源码分析](https://juejin.cn/post/7079605753094340644)
+* [Spring @EnableAsync 注解原理](https://plentymore.github.io/2018/12/29/Spring-EnableAsync-%E6%B3%A8%E8%A7%A3%E5%8E%9F%E7%90%86/)
+
+### 整合Junit5
+
 * [JUnit5 @RunWith](https://www.baeldung.com/junit-5-runwith)
 * [整合JUnit5时出现空指针异常](https://blog.csdn.net/weixin_45088605/article/details/124470799)
 
