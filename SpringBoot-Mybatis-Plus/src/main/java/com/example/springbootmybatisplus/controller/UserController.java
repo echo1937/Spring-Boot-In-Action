@@ -30,6 +30,7 @@ public class UserController {
         userDO.setNickname("大漂亮");
         userDO.setSex(SexEnum.MAN);
         userDO.setHobbies(Arrays.asList("游泳", "健身"));
+        userDO.setIpaddress("8.8.8.8");
         return userService.save(userDO);
     }
 

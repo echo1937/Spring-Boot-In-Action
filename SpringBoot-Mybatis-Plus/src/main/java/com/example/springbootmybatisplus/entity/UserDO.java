@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@TableName(value = "user", autoResultMap = true)
+@TableName(value = "user_table", autoResultMap = true)
 public class UserDO {
 
     /**
@@ -35,6 +35,12 @@ public class UserDO {
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private List<String> hobbies;
+
+    /**
+     * ip地址, 默认127.0.0.1
+     */
+    @TableField(value = "ipaddress")
+    private String ipaddress;
 
     /**
      * 时间字段，自动添加

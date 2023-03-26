@@ -21,5 +21,8 @@ The following guides illustrate how to use some features concretely:
 
 ### 外部链接
 
+* [MySQL Connector/J 8.0 Connection URL Syntax](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-jdbc-url-format.html)
+* [Initializing PostgreSQL JDBC Driver](https://jdbc.postgresql.org/documentation/use/)
+* [PostgreSQL 20.11. Client Connection Defaults](https://www.postgresql.org/docs/15/runtime-config-client.html)
 * [Mybatis-Plus处理MySQL的json类型](https://blog.csdn.net/qq_35098526/article/details/117912886)
 
