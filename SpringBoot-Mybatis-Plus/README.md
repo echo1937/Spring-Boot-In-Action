@@ -5,6 +5,7 @@
 For further reference, please consider the following sections:
 
 * [逻辑删除](https://baomidou.com/pages/6b03c5/)
+  * 这个规范非常有必要进行统一, 防止外部调用时遗漏逻辑删除字段
 * [通用枚举](https://baomidou.com/pages/8390a4/)
 * [字段类型处理器(以JSON字段类型为例)](https://baomidou.com/pages/fd41d8/)
 * [自动填充功能](https://baomidou.com/pages/4c6bcf/)
