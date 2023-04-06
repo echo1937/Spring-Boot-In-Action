@@ -234,6 +234,7 @@
     }
     ```
 ## 6、补充：
+- [Validation in Spring Boot](https://www.baeldung.com/spring-boot-bean-validation)
 - [@Validated和@Valid区别](https://blog.csdn.net/qq_27680317/article/details/79970590)
 - [@Valid和@Validated 的区别和使用](https://my.oschina.net/u/4404311/blog/3230780)
 - [Spring Web + Validation](https://segmentfault.com/a/1190000023959475)
