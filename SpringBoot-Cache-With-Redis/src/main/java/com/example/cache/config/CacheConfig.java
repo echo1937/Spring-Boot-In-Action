@@ -24,7 +24,6 @@ import java.util.Arrays;
 @Configuration
 @RequiredArgsConstructor
 public class CacheConfig {
-    final Logger logger = LoggerFactory.getLogger(CacheConfig.class);
 
     /**
      * /usr/local/opt/redis@4.0/bin/redis-cli -h 20.26.39.43 -p 6379 --raw
@@ -43,7 +42,7 @@ public class CacheConfig {
      * @return jdk序列化
      */
     private RedisCacheConfiguration defaultCacheConfiguration() {
-        logger.info("使用的序列化方式为:JDK");
+        log.info("使用的序列化方式为:JDK");
         // https://www.baeldung.com/spring-boot-redis-cache
         // https://stackoverflow.com/questions/51418161/how-to-create-rediscachemanager-in-spring-data-2-0-x
         return RedisCacheConfiguration.defaultCacheConfig()
@@ -55,7 +54,7 @@ public class CacheConfig {
      * @return Jackson序列化
      */
     private RedisCacheConfiguration jsonCacheConfiguration() {
-        logger.info("使用的序列化方式为:GenericJackson2JsonRedisSerializer");
+        log.info("使用的序列化方式为:GenericJackson2JsonRedisSerializer");
         ObjectMapper mapper = JsonMapper.builder()
                 // 默认ObjectMapper序列化结果不带类型信息, 所以无法 反序列化 对象类型
                 .activateDefaultTyping(new LaissezFaireSubTypeValidator(), ObjectMapper.DefaultTyping.EVERYTHING)
@@ -63,15 +62,17 @@ public class CacheConfig {
                 .findAndAddModules()
                 .build();
 
+        GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer(mapper);
+
         return RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofHours(6))
                 .disableCachingNullValues()
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer(mapper)));
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(genericJackson2JsonRedisSerializer));
     }
 
 
     @Bean
     public KeyGenerator globalKeyGenerator() {
-        return (target, method, params) -> LocalDate.now().toString() + "::" + method.getName() + Arrays.asList(params).toString();
+        return (target, method, params) -> LocalDate.now() + "::" + method.getName() + Arrays.asList(params);
     }
 }
