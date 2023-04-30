@@ -17,11 +17,17 @@ public class CustomSpringEventPublisher {
 
     public void publishCustomEvent(final String message) {
         System.out.println("Publishing custom event. ");
+        /*
+            有2个Listener监听了CustomSpringEvent: CustomSpringEventListener, AnnotationDrivenEventListener.handleCustom()
+         */
         final CustomSpringEvent customSpringEvent = new CustomSpringEvent(this, message);
         // default void publishEvent(ApplicationEvent event)
         applicationEventPublisher.publishEvent(customSpringEvent);
     }
 
+    /**
+     * 被AnnotationDrivenEventListener.handleSuccessful(final GenericSpringEvent<String> event)监听
+     */
     public void publishGenericEvent(final String message, boolean success) {
         System.out.println("Publishing generic event.");
         final GenericSpringEvent<String> genericSpringEvent = new GenericStringSpringEvent(message, success);
@@ -29,6 +35,9 @@ public class CustomSpringEventPublisher {
         applicationEventPublisher.publishEvent(genericSpringEvent);
     }
 
+    /**
+     * 被GenericSpringEventListener监听
+     */
     public void publishGenericAppEvent(final String message) {
         System.out.println("Publishing generic event.");
         final GenericSpringAppEvent<String> genericSpringEvent = new GenericStringSpringAppEvent(this, message);

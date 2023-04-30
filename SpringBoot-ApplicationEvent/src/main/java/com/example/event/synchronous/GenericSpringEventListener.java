@@ -4,6 +4,9 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
+/**
+ * GenericSpringEventListener监听的是自定义的GenericSpringAppEvent<T>
+ */
 @Component
 public class GenericSpringEventListener implements ApplicationListener<GenericSpringAppEvent<String>> {
 
