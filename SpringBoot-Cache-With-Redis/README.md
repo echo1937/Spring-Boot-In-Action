@@ -19,7 +19,7 @@
     + ObjectProvider \<RedisCacheManagerBuilderCustomizer\> redisCacheManagerBuilderCustomizers
 
 ### 相关链接：
-+ [Spring Boot Cache with Redis](https://www.baeldung.com/spring-boot-redis-cache) ，
++ [Spring Boot Cache with Redis](https://www.baeldung.com/spring-boot-redis-cache) ，baeldung的推荐设置
 + [spring-data-redis 2.0 的使用](https://segmentfault.com/a/1190000017953598) ，RedisConfig部分写得较为模糊，也不规范
 + [how-to-create-rediscachemanager-in-spring-data-2-0-x](https://stackoverflow.com/questions/51418161/how-to-create-rediscachemanager-in-spring-data-2-0-x)
 
