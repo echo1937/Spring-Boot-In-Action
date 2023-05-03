@@ -25,6 +25,7 @@
 * 权限
   * monika：ROLE_USER、ROLE_ADMIN
   * jack and peter：ROLE_USER
+  * /greet: 需求权限ROLE_ADMIN
 * 登录
 ```
 POST http://localhost:8080/login
