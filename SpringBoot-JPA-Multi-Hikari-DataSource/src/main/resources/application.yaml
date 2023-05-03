@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: home
+    active: default
   jpa:
     show-sql: true
     properties:

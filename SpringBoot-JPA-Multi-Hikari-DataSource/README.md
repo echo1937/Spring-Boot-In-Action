@@ -1,5 +1,8 @@
 # SpringBoot JPA Multiple DataSource
 
+## 项目来源
+* [Spring JPA – Multiple Databases](https://www.baeldung.com/spring-data-jpa-multiple-databases)
+
 ## 场景
 
 - MySQL数据库
@@ -39,5 +42,4 @@
 ## 扩展阅读
 
 * [https://github.com/Java-Techie-jt/spring-boot-multiple-datasource](https://github.com/Java-Techie-jt/spring-boot-multiple-datasource)
-* [https://github.com/jahe/spring-boot-multiple-datasources](https://github.com/jahe/spring-boot-multiple-datasources)  
-* [Spring JPA – Multiple Databases](https://www.baeldung.com/spring-data-jpa-multiple-databases)
+* [https://github.com/jahe/spring-boot-multiple-datasources](https://github.com/jahe/spring-boot-multiple-datasources)
