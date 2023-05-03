@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -35,14 +36,16 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Map<String, String> request,
-                                        HttpServletResponse httpServletResponse) {
+    public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> request,
+                                                     HttpServletResponse httpServletResponse) {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(request.get("username"), request.get("password"));
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtTokenProvider.generate(authentication);
         httpServletResponse.setHeader(jwtTokenProvider.authenticationHeader, jwtTokenProvider.authenticationScheme + " " + token);
-        return ResponseEntity.ok(token);
+        HashMap<String, String> map = new HashMap<>();
+        map.put("token", token);
+        return ResponseEntity.ok(map);
     }
 
 }

@@ -104,8 +104,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 response.setCharacterEncoding("UTF-8");
                 response.setContentType("application/json");
 
+                String authorization = jwtTokenProvider.authenticationScheme + " " + jwtTokenProvider.generate(authentication);
+                response.setHeader(jwtTokenProvider.authenticationHeader, authorization);
                 Map<String, String> map = new HashMap<>();
-                map.put("token", jwtTokenProvider.authenticationScheme + " " + jwtTokenProvider.generate(authentication));
+                map.put("token", authorization);
                 response.getWriter().println(new ObjectMapper().writeValueAsString(map));
             }
         };
