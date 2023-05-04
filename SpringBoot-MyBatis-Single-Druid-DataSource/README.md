@@ -41,6 +41,9 @@
         * entity + mapper + service
 * xml文件的定位
   * xml文件和mapper文件如果不在同一路径下，需要使用[mybatis.mapper-locations配置xml文件路径](https://blog.csdn.net/zxl646801924/article/details/88669809)
+* 如何打印SQL
+  * 如果是单数据源, 只需设置mybatis.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  * 如果是多数据源, 如[SpringBoot-MyBatis-Multi-Druid-DataSource](..%2FSpringBoot-MyBatis-Multi-Druid-DataSource)和[SpringBoot-MyBatis-Multi-Hikari-DataSource](..%2FSpringBoot-MyBatis-Multi-Hikari-DataSource), 需要参考[Mybatis打印SQL](https://blog.csdn.net/weixin_36507118/article/details/85342398)
 
 ## 更新
 * 版本（2020-12-30）
