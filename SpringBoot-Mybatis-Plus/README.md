@@ -32,3 +32,30 @@ The following guides illustrate how to use some features concretely:
 * [PostgreSQL 20.11. Client Connection Defaults](https://www.postgresql.org/docs/15/runtime-config-client.html)
 * [Mybatis-Plus处理MySQL的json类型](https://blog.csdn.net/qq_35098526/article/details/117912886)
 
+### 遗留问题
+
+```shell
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@230f1e70] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@755985113 wrapping org.postgresql.jdbc.PgConnection@63549d6b] will not be managed by Spring
+==>  Preparing: SELECT id,nickname,sex,hobbies,ipaddress,create_time,update_time,deleted FROM user_table WHERE deleted=0
+==> Parameters: 
+<==    Columns: id, nickname, sex, hobbies, ipaddress, create_time, update_time, deleted
+<==        Row: 1, 大漂亮, 1, ["游泳","健身"], 127.0.0.1, 2023-03-26 13:58:41.672, 2023-03-26 13:58:41.672, 0
+<==        Row: 4, 大漂亮, 1, ["游泳","健身"], 127.0.0.1, 2023-03-26 13:58:49.366, 2023-03-26 13:58:49.366, 0
+<==        Row: 5, 大漂亮, 1, ["游泳","健身"], 8.8.8.8, 2023-03-26 16:07:51.297, 2023-03-26 16:07:51.297, 0
+<==        Row: 6, 大漂亮, 1, ["游泳","健身"], 8.8.8.8, 2023-03-26 17:33:35.079, 2023-03-26 17:33:35.079, 0
+<==        Row: 7, 大漂亮, 1, ["游泳","健身"], 8.8.8.8, 2023-03-26 17:34:17.007, 2023-03-26 17:34:17.007, 0
+<==        Row: 3, 傻子, 1, ["游泳","健身"], 127.0.0.1, 2023-03-26 13:58:48.062, 2023-03-27 10:06:49.642, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@230f1e70]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e5cd30a] was not registered for synchronization because synchronization is not active
+2023-05-04 15:27:07.727  INFO 10309 --- [nio-8066-exec-2] c.e.s.config.MyMetaObjectHandler         : start insert fill ....
+JDBC Connection [HikariProxyConnection@1961376866 wrapping org.postgresql.jdbc.PgConnection@63549d6b] will not be managed by Spring
+==>  Preparing: INSERT INTO user_table ( nickname, sex, hobbies, ipaddress, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+==> Parameters: 大漂亮(String), 1(Integer), ["游泳","健身"](String), 8.8.8.8(String), 2023-05-04T15:27:07.730350(LocalDateTime), 2023-05-04T15:27:07.730580(LocalDateTime)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6e5cd30a]
+```
+

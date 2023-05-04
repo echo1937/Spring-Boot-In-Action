@@ -26,7 +26,7 @@ spring:
 # 逻辑删除
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #mybatis-plus配置控制台打印完整带参数SQL语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # mybatis-plus配置控制台打印完整带参数SQL语句
   global-config:
     db-config:
       logic-delete-field: deleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
