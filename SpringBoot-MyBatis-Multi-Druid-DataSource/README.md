@@ -40,3 +40,13 @@
 ## 扩展阅读
 
 * [Spring Boot(七)：Mybatis 多数据源最简解决方案](https://www.cnblogs.com/ityouknow/p/6102399.html)
+
+## 代码更新
+* 版本(2023_0504)
+  * 更新mybatis-spring-boot-starter 2.1.4至2.3.0
+    * [spring-boot-starter](https://github.com/mybatis/spring-boot-starter)分为了2.1.x/2.3.x/master版本, 需要注意和Spring Boot的兼容性问题
+  * 更新druid-spring-boot-starter 1.1.22至1.2.17
+    * [Druid Spring Boot Starter](https://github.com/alibaba/druid/blob/master/druid-spring-boot-starter)更新了多数据源设置方法
+      * 不再需要[SecondDruidDataSourceWrapper.java](src%2Fmain%2Fjava%2Forg%2Fexample%2Fdruid%2Fmulti%2Fconfig%2FSecondDruidDataSourceWrapper.java)
+      * 不再需要@EnableConfigurationProperties({SecondDruidDataSourceWrapper.class})
+  * 更新JDK 17, 更新spring-boot至2.7.11

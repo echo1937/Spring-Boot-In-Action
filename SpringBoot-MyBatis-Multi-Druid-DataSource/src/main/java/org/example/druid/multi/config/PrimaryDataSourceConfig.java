@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -17,6 +18,7 @@ public class PrimaryDataSourceConfig {
 
     @Primary
     @Bean
+    @ConfigurationProperties("spring.datasource.druid.one")
     public DataSource primaryDatasource() {
         return DruidDataSourceBuilder.create().build();
     }

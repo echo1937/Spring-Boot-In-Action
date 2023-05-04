@@ -3,15 +3,16 @@ spring:
     active: pc
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
-      username: root
-      password: redhat
-      driver-class-name: com.mysql.cj.jdbc.Driver
-    second-druid:
-      url: jdbc:mysql://localhost:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
-      username: root
-      password: redhat
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      one:
+        url: jdbc:mysql://localhost:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+        username: root
+        password: redhat
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      two:
+        url: jdbc:mysql://localhost:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+        username: root
+        password: redhat
+        driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
   configuration:
@@ -20,9 +21,12 @@ mybatis:
 # 命名文档块1
 ---
 spring:
-  profiles: pc
+  config:
+    activate:
+      on-profile: pc
   datasource:
     druid:
-      url: jdbc:mysql://192.168.1.231:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
-    second-druid:
-      url: jdbc:mysql://192.168.1.231:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      one:
+        url: jdbc:mysql://localhost:3306/one?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+      two:
+        url: jdbc:mysql://localhost:3306/two?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
