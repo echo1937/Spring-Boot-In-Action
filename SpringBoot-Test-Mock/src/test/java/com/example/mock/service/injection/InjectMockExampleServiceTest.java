@@ -33,9 +33,9 @@ class InjectMockExampleServiceTest {
     // 使用Mockito模拟
     @Test
     void add() {
-        // 模拟MockExampleServiceadd函数对于任何参数返回都为10
+        // 模拟MockExampleService的add函数对于任何参数返回都为10
         when(mockExampleService.add(anyInt(), anyInt())).thenReturn(10);
-        // InjectMock会走真实的add方法，只不过mock会返回一个模拟的结果
+        // @InjectMock会走真实的add方法，只不过mock会返回一个模拟的结果
         assertEquals(10, injectMockExampleService.add(1, 2));
     }
 }

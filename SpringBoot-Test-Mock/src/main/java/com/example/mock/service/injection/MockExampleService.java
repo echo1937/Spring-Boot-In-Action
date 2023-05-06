@@ -20,6 +20,7 @@ class InjectMockExampleService {
     private MockExampleService mockExampleService;
 
     int add(int a, int b) {
+        System.out.println("执行了com.example.mock.service.injection.InjectMockExampleService.add(" + a + ", " + b + ")");
         return mockExampleService.add(a, b);
     }
 
