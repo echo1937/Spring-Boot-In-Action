@@ -4,8 +4,6 @@ import com.example.form.model.Member;
 import com.example.form.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +24,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     final MemberRepository memberRepository;
-    final Logger logger = LoggerFactory.getLogger(SecurityConfiguration.class);
 
     // 实现PasswordEncoder
     @Bean
@@ -36,6 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     // 实现UserDetailsService
     @Bean
+    @Override
     public UserDetailsService userDetailsService() {
         return username -> {
             Optional<Member> byUsername = memberRepository.findByUsername(username);
@@ -64,7 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     new Member("jack", passwordEncoder().encode("123456"), "Jack", role_user, null),
                     new Member("peter", passwordEncoder().encode("123456"), "Peter", role_user, null));
             memberRepository.saveAll(members);
-            logger.info("H2数据库初始化完毕");
+            log.info("H2数据库初始化完毕");
         };
     }
 
