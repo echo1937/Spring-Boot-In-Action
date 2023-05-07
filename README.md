@@ -26,3 +26,18 @@
 
 **SpringBoot-JPA-Multi-Hikari-DataSource**
 [Spring Data JPA之多数据源配置(Hikari篇)](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-JPA-Multi-Hikari-DataSource)
+
+**gs-messaging-stomp-websocket**
+[利用WebSocket的STOMP协议实现与后端的交互式通信](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/gs-messaging-stomp-websocket)
+
+**SpringBoot-ApplicationEvent**
+[如何使用Spring的事件机制实现代码解耦](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-ApplicationEvent)
+
+**SpringBoot-Asynchronous-Execution**
+[如何在SpringBoot中使用@Async异步方法](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-Asynchronous-Execution)
+
+**SpringBoot-Cache-With-Redis**
+[SpringBoot之实现Redis请求缓存](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-Cache-With-Redis)
+
+**[SpringBoot-Dockerfile-Maven-Plugin](SpringBoot-Dockerfile-Maven-Plugin)**
+[SpringBoot的容器化插件](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-Dockerfile-Maven-Plugin)
