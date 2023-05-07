@@ -12,8 +12,8 @@
 **SpringBoot-OAuth-Login-Example**
 [Spring Security之OAuth Login(Google Sign-In篇)](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-OAuth-Login-Example)
 
-**SpringBoot-OAuth-Rest-JWT**
-[这部分保留在home内](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-OAuth-Rest-JWT)
+**[SpringBoot-OAuth-Rest-JWT](SpringBoot-OAuth-Rest-JWT)**
+未完成
 
 **SpringBoot-MyBatis-Multi-Druid-DataSource**
 [MyBatis之多数据源配置(Druid篇)](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-MyBatis-Multi-Druid-DataSource)
@@ -40,4 +40,16 @@
 [SpringBoot之实现Redis请求缓存](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-Cache-With-Redis)
 
 **[SpringBoot-Dockerfile-Maven-Plugin](SpringBoot-Dockerfile-Maven-Plugin)**
-[SpringBoot的容器化插件](https://github.com/echo1937/Spring-Boot-In-Action/tree/main/SpringBoot-Dockerfile-Maven-Plugin)
+SpringBoot的容器化插件
+
+**[SpringBoot-Mybatis-Plus](SpringBoot-Mybatis-Plus)**
+Mybatis-Plus的功能演示样例
+
+**[SpringBoot-Test-Junit5](SpringBoot-Test-Junit5)**
+SpringBoot之Junit5的功能演示样例
+
+**[SpringBoot-Test-Mock](SpringBoot-Test-Mock)**
+SpringBoot之单元测试工具Mockito
+
+**[SpringBoot-Validation](SpringBoot-Validation)**
+SpringBoot之参数校验功能演示样例
