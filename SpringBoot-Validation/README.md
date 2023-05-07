@@ -1,5 +1,14 @@
 # SpringBoot-Validation
 
+## 0、相关链接
+- 完整简单教程 - [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)
+- baeldung教程 - [Validation in Spring Boot](https://www.baeldung.com/spring-boot-bean-validation)
+- [@Validated和@Valid区别](https://blog.csdn.net/qq_27680317/article/details/79970590)
+- [@Valid和@Validated 的区别和使用](https://my.oschina.net/u/4404311/blog/3230780)
+- [Spring Web + Validation](https://segmentfault.com/a/1190000023959475)
+- [@GroupSequenceProvider和@GroupSequence](https://blog.csdn.net/f641385712/article/details/99725482)
+- [Hibernate Validator 7.0.1.Final](https://docs.jboss.org/hibernate/validator/7.0/reference/en-US/html_single/#_code_groupsequenceprovider_code)
+
 ## 1、级联验证
 - 一对多级联
     ```http request
@@ -233,10 +242,3 @@
       }
     }
     ```
-## 6、补充：
-- [Validation in Spring Boot](https://www.baeldung.com/spring-boot-bean-validation)
-- [@Validated和@Valid区别](https://blog.csdn.net/qq_27680317/article/details/79970590)
-- [@Valid和@Validated 的区别和使用](https://my.oschina.net/u/4404311/blog/3230780)
-- [Spring Web + Validation](https://segmentfault.com/a/1190000023959475)
-- [@GroupSequenceProvider和@GroupSequence](https://blog.csdn.net/f641385712/article/details/99725482)
-- [Hibernate Validator 7.0.1.Final](https://docs.jboss.org/hibernate/validator/7.0/reference/en-US/html_single/#_code_groupsequenceprovider_code)
