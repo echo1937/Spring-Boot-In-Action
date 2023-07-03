@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadPoolExecutor;
 
 
 @Slf4j
@@ -44,11 +45,17 @@ public class SpringAsyncConfig implements AsyncConfigurer {
     public Executor threadPoolTaskExecutor() {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         threadPoolTaskExecutor.setThreadNamePrefix("method_level_");
+        // 这里覆盖了默认策略 new ThreadPoolExecutor.AbortPolicy(), 它是无法通过yaml文件设置的
+        threadPoolTaskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardOldestPolicy());
         return threadPoolTaskExecutor;
     }
 
     /**
-     * @return 这个bean没有办法通过依赖注入调用, 只能通过@Async使用
+     * @return 这个bean没有办法通过依赖注入调用, 只能通过@Async使用, 原因是它没有被Spring托管;
+     * 如果需要, 我们可以通过添加@Bean注解改变这个情况, 这种情况下initialize()就无需调用了, 因为@Bean会自动调用这个方法;
+     * 这也是为什么往往只有getAsyncExecutor()需要调用initialize()方法的原因。
+     *
+     * 这部分内容在@EnableAsync的javadoc的说明里。
      */
     @Override
     public Executor getAsyncExecutor() {

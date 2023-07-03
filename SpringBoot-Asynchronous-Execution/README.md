@@ -48,3 +48,5 @@
       来扫描bean，否则AsyncAnnotationExampleIntegrationTest无法找到bean
     - 通过XML进行异步配置不是重点, 过一眼就好
 
+### 内容补充
+1. 查看com.example.asynchronous.config.SpringAsyncConfig, 里面补充了很多关于线程池初始化的方法和技巧
