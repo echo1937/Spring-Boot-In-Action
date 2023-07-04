@@ -6,7 +6,7 @@ import com.example.springbootmybatisplus.pojo.SexEnum;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @TableName(value = "user_table", autoResultMap = true)
@@ -15,6 +15,7 @@ public class UserDO {
     /**
      * 主键
      */
+    @OrderBy
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
@@ -34,7 +35,7 @@ public class UserDO {
      * 爱好，JSON字段
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
-    private List<String> hobbies;
+    private Set<String> hobbies;
 
     /**
      * ip地址, 默认127.0.0.1
@@ -57,6 +58,7 @@ public class UserDO {
     /**
      * 逻辑删除
      */
-    private Integer deleted;
+    @TableField(value = "delete_time")
+    private LocalDateTime deleteTime;
 
 }

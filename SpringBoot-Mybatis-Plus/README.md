@@ -1,11 +1,12 @@
 # Mybatis-Plus
 
-### 扩展
+### 扩展1
 
 For further reference, please consider the following sections:
 
 * [逻辑删除](https://baomidou.com/pages/6b03c5/)
   * 这个规范非常有必要进行统一, 防止外部调用时遗漏逻辑删除字段
+  * 使用delete_time来表示逻辑删除, null表示未删除
 * [通用枚举](https://baomidou.com/pages/8390a4/)
 * [字段类型处理器(以JSON字段类型为例)](https://baomidou.com/pages/fd41d8/)
 * [自动填充功能](https://baomidou.com/pages/4c6bcf/)
@@ -16,6 +17,22 @@ For further reference, please consider the following sections:
   * 这玩意文档付费, 不推荐使用, 本sample只是解决了MySQL和PostgreSQL交差演示时的切换问题
 * [@OrderBy](https://baomidou.com/pages/223848/#interceptorignore)
   * 默认排序功能, PostgreSQL在更新某条记录后, select *返回时候该行会变成最后一行, 可以用此功能规避显式排序;
+
+### 扩展2
+
+* [配置Knife4j](https://doc.xiaominfo.com/docs/quick-start)
+  * 更推荐使用knife4j-openapi3-spring-boot-starter
+* [注解使用示例](https://www.bezkoder.com/swagger-3-annotations/)
+  * 引入OpenAPI3, 包括依赖引入和注解使用示例
+  * 如果需要在某个模块中单独使用注解, 只需引入swagger-annotations
+
+```xml
+<!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+<dependency>
+    <groupId>io.swagger.core.v3</groupId>
+    <artifactId>swagger-annotations</artifactId>
+</dependency>
+```
 
 ### 插件
 

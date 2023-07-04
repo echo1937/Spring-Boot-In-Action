@@ -7,7 +7,7 @@ CREATE TABLE `user_table`
     `ipaddress`   varchar(43)  NOT NULL DEFAULT '127.0.0.1' COMMENT 'IP地址',
     `create_time` datetime     NOT NULL COMMENT '创建时间',
     `update_time` datetime     NOT NULL COMMENT '更新时间',
-    `deleted`     tinyint(1)   NOT NULL DEFAULT '0' COMMENT '是否删除，1是0否'
+    `delete_time` datetime     NULL COMMENT '删除时间'
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 50
   DEFAULT CHARSET = utf8mb4;
