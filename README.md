@@ -53,3 +53,6 @@ SpringBoot之单元测试工具Mockito
 
 **[SpringBoot-Validation](SpringBoot-Validation)**
 SpringBoot之参数校验功能演示样例
+
+**[SpringBoot-Properties](SpringBoot-Properties)**
+SpringBoot之configuration-processor
